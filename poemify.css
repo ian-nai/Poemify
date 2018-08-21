@@ -1,0 +1,94 @@
+h1 {
+    color: #a3c6ff;
+    font-family: Helvetica;
+    font-size: 6em;
+    text-align: center;
+    line-height: 10%;
+    text-shadow: 0 0.025em  #D60103;
+    background-color: #d7dae0;
+}
+
+h2 {
+    color: #D60103;
+    font-family: Helvetica;
+    font-size: 6em;
+    text-align: center;
+    line-height: 10%;
+    text-shadow: 0 0.025em  #a3c6ff;
+    background-color: #d7dae0;
+}
+
+
+
+body {
+    padding:0;
+    margin:0;
+    background-color: #FEFCFC;
+    text-align: center;
+}
+
+
+header {
+    background-color: #d7dae0;
+    overflow: hidden;
+    margin:0.5;
+}
+
+form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#generate {
+    border: 2px solid black;
+    border-color: #72a8ff;
+    background: white;
+    color: #72a8ff;
+    padding: 4px 4px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#generate:hover {
+    background: #72a8ff;
+    color: white;
+}
+
+#clear {
+    border: 2px solid black;
+    border-color: #D60103;
+    background: white;
+    color: red;
+    padding: 4px 4px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#clear:hover {
+    background: #D60103;
+    color: white;
+}
+
+.markov {
+	padding: 5px;
+	float: left;
+	width: 45%;
+	overflow: auto;
+}
+
+
+
+#PoemTextArea {
+	margin-left: 100px;
+	padding: 5px;
+	float: left;
+	width: 45%;
+	overflow: auto;
+}
+
+span {
+    margin-top:10px;
+    display:block;
+}
