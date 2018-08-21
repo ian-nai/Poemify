@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<head>
+  
+  <a href="https://www.github.com/ian-nai/Poemify" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:rgb(114, 168, 255); color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+    <title>Poemify</title>
+    <script src="libraries/p5/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5/addons/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5/addons/p5.sound.js" type="text/javascript"></script>
+    <script src="libraries/rita-full.min.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="markovword.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    
+	<link rel="stylesheet" href="poemify.css">
+	
+  </head>
+  
+	<header>
+	<h1>Poemify</h1>
+	<h2>Poemify</h2>
+    <h1>Poemify</h1>
+	</header>
+	
+	<body>
+    <p>This page transforms the text in the text area below into lines of pseudo-random length, using a hidden Markov model to sequence the words by parts of speech. <a href="https://github.com/shiffman/A2Z-F16">The text generation algorithm is based off of this example from @shiffman</a>.</p>
+	<p>Your poemified text will appear in both the text box to the left and the empty paragraph to the right. The lines on the right are draggable, and the text on the left is fully editable.</p>
+
+    <p>
+      <textarea id="text" cols="100" rows="15">During the whole of a dull, dark, and soundless day in the autumn of the year, when the clouds hung oppressively low in the heavens, I had been passing alone, on horseback, through a singularly dreary tract of country, and at length found myself, as the shades of the evening drew on, within view of the melancholy House of Usher. I know not how it was—but, with the first glimpse of the building, a sense of insufferable gloom pervaded my spirit. I say insufferable; for the feeling was unrelieved by any of that half-pleasurable, because poetic, sentiment, with which the mind usually receives even the sternest natural images of the desolate or terrible. I looked upon the scene before me—upon the mere house, and the simple landscape features of the domain—upon the bleak walls—upon the vacant eye-like windows—upon a few rank sedges—and upon a few white trunks of decayed trees—with an utter depression of soul which I can compare to no earthly sensation more properly than to the after-dream of the reveller upon opium—the bitter lapse into every-day life—the hideous dropping off of the veil. There was an iciness, a sinking, a sickening of the heart—an unredeemed dreariness of thought which no goading of the imagination could torture into aught of the sublime. What was it—I paused to think—what was it that so unnerved me in the contemplation of the House of Usher? It was a mystery all insoluble; nor could I grapple with the shadowy fancies that crowded upon me as I pondered. I was forced to fall back upon the unsatisfactory conclusion, that while, beyond doubt, there are combinations of very simple natural objects which have the power of thus affecting us, still the analysis of this power lies among considerations beyond our depth. It was possible, I reflected, that a mere different arrangement of the particulars of the scene, of the details of the picture, would be sufficient to modify, or perhaps to annihilate its capacity for sorrowful impression; and, acting upon this idea, I reined my horse to the precipitous brink of a black and lurid tarn that lay in unruffled lustre by the dwelling, and gazed down—but with a shudder even more thrilling than before—upon the remodelled and inverted images of the gray sedge, and the ghastly tree-stems, and the vacant and eye-like windows.</textarea>
+    </p>
+
+    <p>
+      <button id="generate">New Line</button>
+      <button id="clear">Clear All</button>
+    </p>
+	<div id="markov">
+    <form id="form">
+    <span class="con">
+    </span>
+	</form>
+	<textarea id="PoemTextArea" class="inline" cols="100" rows="15"></textarea>
+  </div>
+  </body>
+</html>
